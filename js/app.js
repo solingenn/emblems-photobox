@@ -10,9 +10,9 @@ document.getElementById('police').addEventListener("click", function(){getPhotos
  */
 function getPhotosetId(orgName) 
 {
-    const FIREFIGHTERS = '72157716045261781'
-    const ARMY = '72157716049805487'
-    const POLICE = '72157716049853952'
+    const FIREFIGHTERS = '72157716045261781';
+    const ARMY = '72157716049805487';
+    const POLICE = '72157716049853952';
 
     switch(orgName)
     {
