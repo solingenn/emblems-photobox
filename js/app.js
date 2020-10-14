@@ -1,32 +1,20 @@
-/*
- * Listen for pressed button
- */
-document.getElementById('firefighters').addEventListener("click", function(){var id = getPhotosetId('firefighters');});
-document.getElementById('army').addEventListener("click", function(){getPhotosetId('army');});
-document.getElementById('police').addEventListener("click", function(){getPhotosetId('police');});
+const photobox = new Photobox();
+var elements = document.getElementsByClassName('org');
+
+photobox.initiatePhotobox();
 
 /*
- * Get photoset ID based on pressed button
+ * attach event listener to button elements and 
+ * listen for click event
  */
-function getPhotosetId(orgName) 
+Array.from(elements).forEach(element => 
 {
-    const FIREFIGHTERS = '72157716045261781';
-    const ARMY = '72157716049805487';
-    const POLICE = '72157716049853952';
-
-    switch(orgName)
+    element.addEventListener('click', function()
     {
-        case 'firefighters':
-            var photosetId = FIREFIGHTERS;
-            break;
-        case 'army':
-            var photosetId = ARMY;
-            break;
-        case 'police':
-            var photosetId = POLICE;
-            break;
-    }
-
-    console.log(photosetId);
-    return photosetId;
-}
+        var photoset = new FlickrApi();
+        var photosetId = photoset.getPhotosetId(element.id);
+    
+        document.getElementById('gallery').innerHTML = "";
+        photobox.initiatePhotobox(photosetId);
+    });
+});
