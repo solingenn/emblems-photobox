@@ -2,11 +2,10 @@
 
 class Photobox
 {
-    initiatePhotobox(albumId='72157716049805487')
+    initiatePhotobox(albumId='72157717099281102')
     {
         var numOfImages = window.location.search ? parseInt(window.location.search.match(/\d+$/)[0]) : 70,
             gallery = $('#gallery'),
-            
             videos = [
                 /*
                 {
@@ -31,13 +30,13 @@ class Photobox
             dataType: 'jsonp',
             jsonp: 'jsoncallback'
         })
-        .done(function (data)
+        .done(function(data)
         {
             var loadedIndex = 1, isVideo;
             
             console.log(data);
             
-            // add the videos to the collection
+            // add videos to the collection
             data.photoset.photo = data.photoset.photo.concat(videos);
             
             $.each( data.photoset.photo, function(index, photo)
@@ -78,7 +77,9 @@ class Photobox
 
             // finally, initialize photobox on all retrieved images
             $('#gallery').photobox('a', { thumbs:true }, callback);
-            // using setTimeout to make sure all images were in the DOM, before the history.load() function is looking them up to match the url hash
+            
+            // using setTimeout to make sure all images were in the DOM, 
+            // before the history.load() function is looking them up to match the url hash
             setTimeout(window._photobox.history.load, 1000);
             function callback()
             {

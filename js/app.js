@@ -7,8 +7,7 @@ photobox.initiatePhotobox();
  * attach event listener to button elements and 
  * listen for click event
  */
-Array.from(elements).forEach(element => 
-{
+Array.from(elements).forEach(element => {
     element.addEventListener('click', function()
     {
         var photoset = new FlickrApi();
