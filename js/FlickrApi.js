@@ -6,17 +6,17 @@ class FlickrApi
      */ 
     static get FIREFIGHTERS()
     {
-        return '72157717099281102';
+        return '72157718601587952';
     }
 
     static get ARMY()
     {
-        return '72157716049805487';
+        return '72157718596543881';
     }
 
     static get POLICE()
     {
-        return '72157716049853952';
+        return '72157718601716672';
     }
 
     getPhotosetId(elementId)

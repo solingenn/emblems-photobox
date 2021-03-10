@@ -2,7 +2,7 @@
 
 class Photobox
 {
-    initiatePhotobox(albumId='72157717099281102')
+    initiatePhotobox(albumId='72157718601587952')
     {
         var numOfImages = window.location.search ? parseInt(window.location.search.match(/\d+$/)[0]) : 70,
             gallery = $('#gallery'),
