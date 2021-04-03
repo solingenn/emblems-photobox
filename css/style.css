@@ -12,7 +12,7 @@ a{ text-decoration:none; }
 #gallery li.video::before{ content:'\25BA'; color:#FFF; font-size:20px; height:20px; width:20px; line-height:0.9; position:absolute; bottom:3px; left:4px; z-index:1; background:rgba(0,0,0,0.4); box-shadow:0 0 0 3px rgba(0,0,0,0.4); border-radius:0 3px 0 0; pointer-events:none; opacity:0; -webkit-transition:.5s 0.2s; transition:.5s 0.2s; }
 #gallery li.loaded.video::before{ opacity:1; }
 /* here change width and height of thumb images*/
-#gallery a{ display:block; width:200px; height:200px; vertical-align:bottom; overflow:hidden; background:rgba(0,0,0,0.1);
+#gallery a{ display:block; width:210px; height:280px; vertical-align:bottom; overflow:hidden; background:rgba(172, 167, 167, 0.1);
 -webkit-transition:.4s ease-out;
 transition:.4s ease-out; -webkit-transition:0.4s ease-out; -webkit-transform:rotateX(90deg) translate(-50px,-50%); transform:rotateX(90deg) translate(-50px,-50%); }
 #gallery a:active, #gallery a:focus{ outline:none; }

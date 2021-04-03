@@ -23,7 +23,6 @@ class Photobox
             data: {
                 format: 'json',
                 method: 'flickr.photosets.getPhotos',
-                per_page: numOfImages,
                 photoset_id: albumId,
                 api_key: 'b51d3a7c3988ba6052e25cb152aecba2'
             },
@@ -32,9 +31,8 @@ class Photobox
         })
         .done(function(data)
         {
+            // console.log(data);
             var loadedIndex = 1, isVideo;
-            
-            console.log(data);
             
             // add videos to the collection
             data.photoset.photo = data.photoset.photo.concat(videos);
@@ -71,7 +69,7 @@ class Photobox
                 
                 img['largeUrl'] = isVideo ? photo.url : url + '_b.jpg';
                 img['isVideo'] = isVideo;
-                img.src = isVideo ? photo.thumb : url + '_t.jpg';
+                img.src = isVideo ? photo.thumb : url + '_c.jpg';
                 img.title = photo.title;
             });
 
