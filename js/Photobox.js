@@ -17,6 +17,12 @@ class Photobox
             ];
               
         // Get photos from Flickr
+        this.getPhotos(albumId, numOfImages, gallery, videos);
+    }
+
+    getPhotos(albumId, numOfImages, gallery, videos)
+    {
+        // Get photos from Flickr
         $.ajax
         ({
             url: 'https://api.flickr.com/services/rest/',
