@@ -33,8 +33,6 @@ class FlickrApi
                 var photosetId = FlickrApi.POLICE;
                 break;
         }
-
-        console.log(photosetId);
         return photosetId;
     }
 }

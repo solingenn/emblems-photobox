@@ -31,7 +31,6 @@ class Photobox
         })
         .done(function(data)
         {
-            // console.log(data);
             var loadedIndex = 1, isVideo;
             
             // add videos to the collection

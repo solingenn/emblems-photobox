@@ -34,7 +34,7 @@ transition:.4s ease-out; -webkit-transition:0.4s ease-out; -webkit-transform:rot
     font-size: 55px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     position: relative;
-    top: -74px
+    top: -74px;
 }
 
 h1.title
@@ -45,6 +45,15 @@ h1.title
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
+}
+
+.selector_container 
+{
+    margin-top: 15px;
+    height: 10px;
+    padding: 25px;
+    position: relative;
+    top: -60px;
 }
 
 .button
@@ -62,21 +71,24 @@ h1.title
     cursor: pointer;
 }
 
+.active
+{
+    background-color: black;
+    color: steelblue;
+    border: 2px solid steelblue;
+}
+
 .button:hover
 {
     background-color: black;
-    color: whitesmoke;
+    color: red;
     border: 2px solid red;
     border-radius: 12px;
 }
 
-.selector_container 
+.button:focus
 {
-    margin-top: 15px;
-    height: 10px;
-    padding: 25px;
-    position: relative;
-    top: -60px
+    outline: none;
 }
   
 .center
