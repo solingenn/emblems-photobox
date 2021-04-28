@@ -1,6 +1,6 @@
 
 html{ min-height:100%;  overflow-y:scroll;  background:#000; }
-body{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; padding:0; }
+body{ background-color:#000; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; padding:0; }
 
 a{ text-decoration:none; }
 
@@ -25,7 +25,7 @@ transition:.4s ease-out; -webkit-transition:0.4s ease-out; -webkit-transform:rot
 
 .title_container
 {
-    background: url(../public/images/flag-of-croatia-4k-rhombus.jpg) 17% 17%;
+    background: url("../images/flag-of-croatia-4k-rhombus.jpg") 17% 17%;
     background-position: 50% 17%;
     background-size: auto;
     color: whitesmoke;
@@ -39,7 +39,7 @@ transition:.4s ease-out; -webkit-transition:0.4s ease-out; -webkit-transform:rot
 
 h1.title
 {
-    background: url(../public/images/croatia-flag-wallpapers.jpg) 50% 50%;
+    background: url("../images/croatia-flag-wallpapers.jpg") 50% 50%;
     background-size: cover;
     top: 40px;
     -webkit-text-fill-color: transparent;
@@ -100,10 +100,20 @@ h1.title
     transform: translate(-50%, -50%);
 }
 
-@media only screen and (max-width:620px) 
+
+@media only screen and (max-width:1250px) 
 {
-    /* For mobile phones: */
-    html {
-      width:fit-content;
+
+    .title_container, .selector_container, #gallery
+    {
+      display: none;
     }
-  }
+
+    .message
+    {
+        font-size: 30px;
+        color: steelblue;
+        text-align: center;
+        display: block;
+    }
+}
