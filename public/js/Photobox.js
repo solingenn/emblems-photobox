@@ -38,20 +38,31 @@ class Photobox
         .done(function(data)
         {
             var loadedIndex = 1, isVideo;
+            var photoset = data.photoset.photo;
+
+            console.log('Loading content:', data);
             
             // add videos to the collection
-            data.photoset.photo = data.photoset.photo.concat(videos);
-            
-            $.each( data.photoset.photo, function(index, photo)
+            photoset = data.photoset.photo.concat(videos);
+
+            $.each(photoset, function(index, photo)
             {
+                
                 isVideo = photo.thumb ? true : false;
                 // http://www.flickr.com/services/api/misc.urls.html
                 var url = 'http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret,
                     img = document.createElement('img');
-                
+
                 // lazy show the photos one by one
                 img.onload = function(e)
                 {
+                    /*
+                     * this event listener stops loading images when any "org" class button
+                     * is pressed so that images don't continue to load (overlap) after the
+                     * new set of images is requested
+                     */                    
+                    document.addEventListener('stopLoading', function() { stop(); });
+
                     img.onload = null;
                     var link = document.createElement('a'),
                     li = document.createElement('li')
@@ -66,7 +77,7 @@ class Photobox
                     li.appendChild(link);
                     gallery[0].appendChild(li);
                 
-                    setTimeout( function()
+                    setTimeout(function()
                     { 
                         $(li).addClass('loaded');
                     }, 25*loadedIndex++);
@@ -79,15 +90,11 @@ class Photobox
             });
 
             // finally, initialize photobox on all retrieved images
-            $('#gallery').photobox('a', { thumbs:true }, callback);
-            
+            $('#gallery').photobox('a', { thumbs:true });
+
             // using setTimeout to make sure all images were in the DOM, 
             // before the history.load() function is looking them up to match the url hash
             setTimeout(window._photobox.history.load, 1000);
-            function callback()
-            {
-                console.log('callback for loaded content:', this);
-            };
         });
     }
 }
